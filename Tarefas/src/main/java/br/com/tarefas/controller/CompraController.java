@@ -117,15 +117,9 @@ public class CompraController {
 		List<String> Tesoureiro = usuarioDao.CarrefaEmailUsuarioPerfil("2");
 		List<String> Engenheiro = usuarioDao.CarrefaEmailUsuarioPerfil("10");
 
-		enviatodos.addAll(Comprador);
-		enviatodos.addAll(Presidente);
-		enviatodos.addAll(Tesoureiro);
-		enviatodos.addAll(Engenheiro);
-		
-		
 		Mail e = new Mail();
 
-		e.sendEmailEquipeCompras(enviatodos, c.getSolicitante(), c.getEmailSolicitante(),
+		e.sendEmailEquipeCompras(Comprador, Presidente, Tesoureiro, Engenheiro, c.getSolicitante(), c.getEmailSolicitante(),
 				"PEDIDO " + c.getCompraId().toString() + " CADASTRADO ", c.getCompraId().toString(),
 				"Confimação de Pedido novo", "Favor dar sequência na compra.");
 		return "Compras/ItemPedido";
