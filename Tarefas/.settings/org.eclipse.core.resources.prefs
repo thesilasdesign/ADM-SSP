@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/login.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/tarefa/lista.jsp=UTF-8
+encoding//src/main/java/br/com/tarefas/controller/CompraController.java=UTF-8
+encoding//src/main/java/br/com/tarefas/interceptor/PageFilter.java=UTF-8
