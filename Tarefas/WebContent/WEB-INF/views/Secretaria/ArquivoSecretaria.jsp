@@ -15,6 +15,12 @@
 			<div class="clearfix">
 				<div class="pull-right tableTools-container"></div>
 			</div>
+			<form method="POST"
+				action="${pageContext.request.contextPath}/upload"
+				enctype="multipart/form-data">
+				<input type="file" name="file" /><br /> <input type="submit"
+					value="Submit" />
+			</form>
 			<div class="table-responsive">
 				<table id="dynamic-table"
 					class="table table-striped table-bordered table-hover">
@@ -27,12 +33,15 @@
 					<tbody>
 						<c:forEach items="${files}" var="files">
 							<tr>
-								<td>${files}</td>
-								<td><a class=red
-									href='http://www.portaljandiraccb.com.br/Diretorio/ArquivosSecretaria/${files}' target="_blank" download><i
-										class='ace-icon fa fa-cloud-download bigger-130'></i></a></td>
+								<c:if test="${files != '.' or '..'}">
+									<td>${files}</td>
+									<td><a class=red
+										href='/public_html/ccbspp/Secretaria/${files}' target="_blank"
+										download><i
+											class='ace-icon fa fa-cloud-download bigger-130'></i></a></td>
+								</c:if>
 							</tr>
-							
+
 						</c:forEach>
 					</tbody>
 				</table>

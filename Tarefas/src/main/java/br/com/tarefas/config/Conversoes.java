@@ -5,6 +5,7 @@ import java.net.SocketException;
 import java.text.NumberFormat;
 import java.util.Random;
 
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
@@ -30,13 +31,13 @@ public class Conversoes {
 		String[] arq = null;
 
 		FTPClient ftp = new FTPClient();
-		ftp.connect("ftp.jandiraccb.com.br");
-		ftp.login("jandirac", "Ja123@iniciar");
+		ftp.connect("184.107.94.164");
+		ftp.login("ccbssp", "cYUg2+;&@(Rf");
 		if (FTPReply.isPositiveCompletion(ftp.getReplyCode())) {
 			System.out.println("....: Conectado");
 			ftp.enterLocalPassiveMode();
 		}
-		ftp.changeWorkingDirectory("/public_html/Diretorio/" + pasta);
+		ftp.changeWorkingDirectory("public_html/ccbspp/Secretaria"	);
 		System.out.print("....: " + ftp.getReplyString());
 		System.out.println("....: Porta " + ftp.getDefaultPort());
 		try {
@@ -56,6 +57,43 @@ public class Conversoes {
 		}
 		return arq;
 	}
+	
+	
+	public String[] ListaFTP2(String pasta) throws SocketException, IOException {
+		String[] arq = null;
+
+		String server = "184.107.94.164";
+        int port = 21;
+        String user = "ccbspp";
+        String pass = "cYUg2+;&@(Rf";
+ 
+        FTPClient ftpClient = new FTPClient();
+        try {
+ 
+            ftpClient.connect(server, port);
+            ftpClient.login(user, pass);
+            ftpClient.enterLocalPassiveMode();
+ 
+            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+            ftpClient.changeWorkingDirectory("public_html/ccbspp/Secretaria"	);
+			arq = ftpClient.listNames();
+			@SuppressWarnings("unused")
+			FTPFile[] ftpFiles = ftpClient.listFiles();
+			System.out.println("Listando arquivos: \n");
+			for (String f : arq) {
+				System.out.println(f);
+			}
+			ftpClient.logout();
+			ftpClient.disconnect();
+		} catch (NullPointerException e) {
+			System.out.println(e.getMessage());
+		} catch (SocketException es) {
+			System.out.println(es.getMessage());
+		}
+		return arq;
+	}
+	
+	
 
 	public String SenhaRandon() {
 		// Determia as letras que poderão estar presente nas chaves
