@@ -90,7 +90,7 @@ public class SecretariaController {
 			ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 
 			// APPROACH #1: uploads first file using an InputStream
-			File firstLocalFile = new File(arq);
+		//	File firstLocalFile = new File(arq);
 
 			String firstRemoteFile = "public_html/ccbspp/";
 			InputStream inputStream = new FileInputStream(firstLocalFile);

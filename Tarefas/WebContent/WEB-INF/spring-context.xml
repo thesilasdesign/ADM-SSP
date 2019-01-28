@@ -46,24 +46,24 @@
 		<bean class="br.com.tarefas.interceptor.AutorizadorInterceptor" />
 	</mvc:interceptors>
 
-	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3307/admssp" />
-		<property name="username" value="root" />
-		<property name="password" value="root" />
-	</bean>
-	
-	
-
-
 <!-- 	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
 <!-- 		<property name="driverClassName" value="com.mysql.jdbc.Driver" /> -->
-<!-- 		<property name="url" value="jdbc:mysql://localhost:3307/jandirac_teste" /> -->
+<!-- 		<property name="url" value="jdbc:mysql://localhost:3307/admssp" /> -->
 <!-- 		<property name="username" value="root" /> -->
 <!-- 		<property name="password" value="root" /> -->
 <!-- 	</bean> -->
+	
+	
 
 
+	<bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://184.107.94.164:3306/ccbspp_adm" />
+		<property name="username" value="ccbspp_adm" />
+		<property name="password" value="adm1@Iniciar" />
+	</bean>
+
+	
 
 	<bean id="viewResolver1"
 		class="org.springframework.web.servlet.view.ResourceBundleViewResolver">

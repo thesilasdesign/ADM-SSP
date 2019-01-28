@@ -121,7 +121,7 @@ public class LoginController implements Serializable {
 			try {
 				e.sendEmailSenhaNova(u.getNome(), u.getEmail(), "Recuperação de Senha", "",
 						"Sua nova Senha é: " + NovaSenha,
-						"Favor entrar no sistema usando está senha e alterar no Perfil uma nova.");
+						" ");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}

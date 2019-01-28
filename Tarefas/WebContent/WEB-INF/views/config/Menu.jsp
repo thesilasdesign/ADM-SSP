@@ -68,12 +68,12 @@
 			</a>
 			<b class="arrow"></b>
 			</li>
-			<li class="">
-			<a href="ComissaoConstrucao"> <i class="menu-icon fa fa-university"></i> <span
-				class="menu-text">Comissão Constr.</span>
-			</a>
-			<b class="arrow"></b>
-			</li>
+<!-- 			<li class=""> -->
+<!-- 			<a href="ComissaoConstrucao"> <i class="menu-icon fa fa-university"></i> <span -->
+<!-- 				class="menu-text">Comissão Constr.</span> -->
+<!-- 			</a> -->
+<!-- 			<b class="arrow"></b> -->
+<!-- 			</li> -->
 
 			<c:forEach items="${MENU1}" var="list">
 

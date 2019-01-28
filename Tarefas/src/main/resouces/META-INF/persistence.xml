@@ -20,12 +20,19 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 <!-- 			/> <property name="javax.persistence.jdbc.user" value="root" /> <property -->
 <!-- 			name="javax.persistence.jdbc.password" value="root" /> -->
 		
-<!-- 			 dados da conexao --> 
+<!-- 			 dados da conexao local --> 
+<!-- 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> -->
+<!-- 			<property name="javax.persistence.jdbc.url"  -->
+<!--  				value="jdbc:mysql://localhost:3307/admssp" />  -->
+<!--  			<property name="javax.persistence.jdbc.user" value="root" /> -->
+<!--  			<property name="javax.persistence.jdbc.password" value="root" />  -->
+ 			
+ 			<!-- 			 dados da conexao web --> 
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" 
- 				value="jdbc:mysql://localhost:3307/admssp" /> 
- 			<property name="javax.persistence.jdbc.user" value="root" />
- 			<property name="javax.persistence.jdbc.password" value="root" /> 
+ 				value="jdbc:mysql://184.107.94.164/ccbspp_adm" /> 
+ 			<property name="javax.persistence.jdbc.user" value="ccbspp_adm" />
+ 			<property name="javax.persistence.jdbc.password" value="adm1@Iniciar" /> 
 			
 			<property name="connection.provider_class"
 				value="org.hibernate.connection.C3P0ConnectionProvider" />

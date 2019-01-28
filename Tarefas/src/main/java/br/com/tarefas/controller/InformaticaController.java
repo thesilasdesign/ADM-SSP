@@ -102,6 +102,7 @@ public class InformaticaController {
 		informatica.setDataAbertura(Calendar.getInstance());
 		informatica.setStatus("1-ABERTO");
 		informaticaDao.adiciona(informatica);
+		
 		return "redirect:Home";
 	}
 
