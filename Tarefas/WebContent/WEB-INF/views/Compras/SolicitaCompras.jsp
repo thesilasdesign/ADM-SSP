@@ -52,7 +52,6 @@
 					<td>${Compras.comum}</td>
 					<td><fmt:formatNumber value= "${Compras.valorTotal}" type="NUMBER"  minFractionDigits="2"/></td>
 					<td>${Compras.status}</td>
-					<td></td>
 					<td>${Compras.comprador}</td>
 					<td><a class="red"
 						href="GerarPDFCompra.pdf?id=${Compras.compraId}"> <i

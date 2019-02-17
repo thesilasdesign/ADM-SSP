@@ -346,8 +346,14 @@ public class CompraController {
 				&& compraStatic.getAprovacaoTesoureiro().contains("3|")) {
 			compraStatic.setStatus("5-APROVADO");
 
+		    @SuppressWarnings("unused")
+			List<String> Comprador = usuarioDao.CarrefaEmailUsuarioPerfil("4"); 
+			List<String> Presidente = usuarioDao.CarrefaEmailUsuarioPerfil("9");
+			List<String> Tesoureiro = usuarioDao.CarrefaEmailUsuarioPerfil("2");
+			List<String> Engenheiro = usuarioDao.CarrefaEmailUsuarioPerfil("10");
+			
 			Mail e = new Mail();
-			e.sendEmailCompraAprovacao(compraStatic.getSolicitante(), compraStatic.getEmailSolicitante(),
+			e.sendEmailCompraAprovacao(Comprador,Presidente,Tesoureiro,Engenheiro, compraStatic.getSolicitante(), compraStatic.getEmailSolicitante(),
 					"PEDIDO " + compraStatic.getCompraId().toString() + " APROVADO",
 					compraStatic.getCompraId().toString(), "Confimação de Pedido aprovado",
 					"Favor dar sequência na compra.");

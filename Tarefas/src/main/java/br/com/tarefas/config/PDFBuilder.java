@@ -191,8 +191,7 @@ public class PDFBuilder extends AbstractITextPdfView {
 			Chapter catPart = new Chapter(new Paragraph(anchor), 1);
 
 			doc.add(new Paragraph("CONGREGAÇÃO CRISTÃ NO BRASIL", subFont));
-			doc.add(new Paragraph("ADMINISTRAÇÃO JANDIRA - CNPJ: 09.273.888/0001-00", subFont));
-			doc.add(new Paragraph("RUA ANDRÉ VIDAL DE NEGREIROS, 96 - CENTRO - JANDIRA - CEP 06600-140", smallBold));
+			doc.add(new Paragraph("ADMINISTRAÇÃO SANTANA DE PARNAIBA E PIRAPORA", subFont));
 
 			// define font for table header row
 			Font font = FontFactory.getFont(FontFactory.HELVETICA);
@@ -203,57 +202,7 @@ public class PDFBuilder extends AbstractITextPdfView {
 //			
 //			image2.scaleAbsolute(500f, 500f);
 //			doc.add(image2);
-			Paragraph espaco = new Paragraph("", smallBold);
-			doc.add(espaco);
-			doc.add(new Paragraph(" ", Helvetica));
-			doc.add(new Paragraph(" ", Helvetica));
-			doc.add(new Paragraph("PROVISÓRIO                                                                DESPESAS ", smallBold));
-			PdfPTable tableini = new PdfPTable(2);
-			tableini.setWidthPercentage(100.0f);
-			tableini.setWidths(new float[] {3.0f, 3.0f});
-			tableini.setSpacingBefore(10);
-			// define table header cell
-			PdfPCell cellini = new PdfPCell();
-			cellini.setBackgroundColor(BaseColor.WHITE);
-			cellini.setPadding(8);
-
-			// write table header
-			cellini.setPhrase(new Phrase("", font));
-			tableini.addCell(cellini);
-
-			cellini.setPhrase(new Phrase("", font));
-			tableini.addCell(cellini);
-			doc.add(tableini);	
-			doc.add(new Paragraph(" ", Helvetica));
-			doc.add(new Paragraph("OBSERVAÇÃO:", smallBold));
-			doc.add(new Paragraph(" ", Helvetica));
-			doc.add(new Paragraph(" ", Helvetica));
-			doc.add(new Paragraph(" ", Helvetica));
-						
-			doc.add(new Paragraph("COMPRAS:", smallBold));
-			doc.add(new Paragraph("ENTRADA SETOR:", smallBold));
-			doc.add(new Paragraph(" ", Helvetica));
-			
-			doc.add(new Paragraph("DIGITALIZAÇÃO:", smallBold));
-			doc.add(new Paragraph("ENTRADA SETOR:", smallBold));
-			doc.add(new Paragraph(" ", Helvetica));
-			
-			doc.add(new Paragraph("TESOURARIA:", smallBold));
-			doc.add(new Paragraph("ENTRADA SETOR:", smallBold));
-			doc.add(new Paragraph(" ", Helvetica));
-			
-			doc.add(new Paragraph("DIGITALIZAÇÃO:", smallBold));
-			doc.add(new Paragraph("ENTRADA SETOR:", smallBold));
-			doc.add(new Paragraph(" ", Helvetica));
-			
-			doc.add(new Paragraph("CONTABILIDADE:", smallBold));
-			doc.add(new Paragraph("ENTRADA SETOR:", smallBold));
-			doc.add(new Paragraph(" ", Helvetica));
-			
-			doc.add(new Paragraph("CONSELHO FISCAL:", smallBold));
-			doc.add(new Paragraph("ENTRADA SETOR:", smallBold));
-			doc.add(new Paragraph(" ", Helvetica));
-			
+			doc.add(new Paragraph(" ", smallBold));
 			doc.add(new Paragraph("Dados Pedido: ", smallBold));
 			doc.add(new Paragraph("Numero do Pedido: " + compra.getCompraId(), Helvetica));
 			doc.add(new Paragraph("Data Solicitação: " + converteData(compra.getDataAbertura()), Helvetica));
@@ -270,11 +219,11 @@ public class PDFBuilder extends AbstractITextPdfView {
 			doc.add(new Paragraph(" ", Helvetica));
 
 			doc.add(new Paragraph("Dados Aprovação", smallBold));
-			doc.add(new Paragraph("Presidente: Antonio Luiz da Silva Pereira, Data Aprovação: "
+			doc.add(new Paragraph("Presidente, Data Aprovação: "
 					+ converteData(compra.getDataAprovacaoPresidente()), Helvetica));
-			doc.add(new Paragraph("Tesoureiro: Adailton Carlos Procópio Miranda, Data Aprovação: "
+			doc.add(new Paragraph("Tesoureiro, Data Aprovação: "
 					+ converteData(compra.getDataAprovacaoTesoureiro()), Helvetica));
-			doc.add(new Paragraph("Engenheiro: Douglas Visnyei Feltrin, Data Aprovação: "
+			doc.add(new Paragraph("Engenheiro, Data Aprovação: "
 					+ converteData(compra.getDataAprovacaoEngenheiro()), Helvetica));
 			doc.add(new Paragraph(" ", Helvetica));
 			
@@ -323,10 +272,10 @@ public class PDFBuilder extends AbstractITextPdfView {
 			cell.setPhrase(new Phrase("Marca/Modelo", font));
 			table.addCell(cell);
 
-			cell.setPhrase(new Phrase("Vlr Unid", font));
+			cell.setPhrase(new Phrase("Valor unidade", font));
 			table.addCell(cell);
 
-			cell.setPhrase(new Phrase("Vlr Total", font));
+			cell.setPhrase(new Phrase("Valor Total", font));
 			table.addCell(cell);
 
 			// write table row data
@@ -348,7 +297,10 @@ public class PDFBuilder extends AbstractITextPdfView {
 				teste = teste + item.getValorTotal();
 			}
 			doc.add(table);
+			
 			doc.add(new Paragraph("                                                                                                                      Valor Total: " + convValor.format(compra.getValorTotal()), smallBold));
+			doc.add(new Paragraph(" ", Helvetica));
+			doc.add(new Paragraph("Observações Escritas:", smallBold));
 		}
 	}
 }

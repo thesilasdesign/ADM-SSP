@@ -117,22 +117,26 @@ public class UsuarioDaoImpl<T> extends GenericDaoImpl<Usuario, Long> implements 
 
 	@Override
 	public List<Usuario> CarrefaUsuarioPerfil(String Perfil) {
-		Query query = manager.createQuery("FROM Usuario u WHERE u.Perfil=" + Perfil);
-		@SuppressWarnings("unchecked")
+		Query query = manager.createQuery("FROM Usuario u WHERE u.Perfil = :perfil");
+		query.setParameter("perfil", Perfil);
 		List<Usuario> lista = query.getResultList();
-
-		return lista;
+		if (lista.isEmpty())
+			return null;
+		else
+			return lista;
 
 	}
 
 	@Override
 	public List<String> CarrefaEmailUsuarioPerfil(String Perfil) {
 		Query query = manager
-				.createNativeQuery("select Email from Usuario where Perfil = " + "'" + Perfil + "'");
+				.createNativeQuery("select Email from usuario where Perfil = " + "'" + Perfil + "'");
 		@SuppressWarnings("unchecked")
 		List<String> lista = query.getResultList();
-
-		return lista;
+		if (lista.isEmpty())
+			return null;
+		else
+			return lista;
 	}
 
 }
